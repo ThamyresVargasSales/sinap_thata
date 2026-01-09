@@ -1,0 +1,145 @@
+:root {
+  --blue-50: #EFF6FF;
+  --blue-100: #DBEAFE;
+  --blue-200: #BFDBFE;
+  --blue-300: #93C5FD;
+  --blue-400: #60A5FA;
+  --blue-600: #2563EB;
+  --blue-700: #1D4ED8;
+  --blue-800: #1E40AF;
+  --blue-900: #1E3A8A;
+  --gray-600: #4B5563;
+  --gray-700: #374151;
+  --gray-900: #111827;
+  --white: #FFFFFF;
+}
+
+/* ---------- GERAL ---------- */
+.quiz-wrapper {
+  max-width: 700px;
+  margin: 120px auto 50px;
+  background: linear-gradient(to bottom right, var(--blue-50), var(--blue-100));
+  padding: 30px 25px;
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+  font-family: "Segoe UI", sans-serif;
+  color: var(--gray-900);
+  text-align: center;
+}
+
+.quiz-wrapper h2 {
+  font-size: 1.6rem;
+  margin-bottom: 12px;
+  color: var(--blue-800);
+  font-weight: 700;
+}
+
+.quiz-wrapper h3 {
+  font-size: 1.3rem;
+  margin-bottom: 25px;
+}
+
+/* ---------- VIDEO ---------- */
+.video-libras {
+  width: 100%;
+  max-height: 400px;
+  border-radius: 12px;
+  margin-bottom: 25px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+}
+
+/* ---------- OPÇÕES ---------- */
+.opcoes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-bottom: 25px;
+  justify-content: center;
+}
+
+.btn-opcao {
+  background-color: var(--blue-200);
+  color: var(--blue-800);
+  border: 2px solid var(--blue-300);
+  border-radius: 10px;
+  padding: 14px 20px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  flex: 1 1 45%;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.btn-opcao:hover:not(:disabled) {
+  background-color: var(--blue-600);
+  color: var(--white);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+}
+
+.btn-opcao:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+/* ---------- FEEDBACK ---------- */
+.feedback {
+  font-size: 1.1rem;
+  font-weight: 600;
+  padding: 12px 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.feedback.correct {
+  background-color: #D1FAE5;
+  color: #065F46;
+}
+
+.feedback.incorrect {
+  background-color: #FEE2E2;
+  color: #B91C1C;
+}
+
+/* ---------- BOTÃO PRÓXIMA ---------- */
+.btn-proxima {
+  background-color: var(--blue-600);
+  color: var(--white);
+  border: none;
+  padding: 14px 25px;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-proxima:hover {
+  background-color: var(--blue-700);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+}
+
+/* ---------- RESPONSIVO ---------- */
+@media (max-width: 768px) {
+  .quiz-wrapper {
+    margin: 100px 15px 30px;
+    padding: 20px;
+  }
+
+  .video-libras {
+    max-height: 250px;
+  }
+
+  .btn-opcao {
+    flex: 1 1 100%; /* uma coluna no celular */
+    font-size: 0.95rem;
+    padding: 12px 18px;
+  }
+
+  .btn-proxima {
+    width: 100%;
+    padding: 14px;
+  }
+}

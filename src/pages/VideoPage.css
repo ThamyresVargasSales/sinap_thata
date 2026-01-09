@@ -1,0 +1,97 @@
+:root {
+  --blue-50: #EFF6FF;
+  --blue-100: #DBEAFE;
+  --blue-200: #BFDBFE;
+  --blue-300: #93C5FD;
+  --blue-400: #60A5FA;
+  --blue-600: #2563EB;
+  --blue-700: #1D4ED8;
+  --blue-800: #1E40AF;
+  --blue-900: #1E3A8A;
+  --indigo-100: #E0E7FF;
+  --gray-600: #4B5563;
+  --gray-700: #374151;
+  --gray-900: #111827;
+  --white: #FFFFFF;
+}
+
+/* Fundo geral */
+.video-page {
+  min-height: 100vh;
+  background: linear-gradient(to bottom right, var(--blue-50), var(--indigo-100));
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Botão voltar */
+.voltar {
+  background: var(--blue-700);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 15px;
+  margin-bottom: 25px;
+  transition: 0.2s ease;
+}
+
+.voltar:hover {
+  background: var(--blue-800);
+  transform: translateY(-2px);
+}
+
+/* Card do vídeo */
+.video-card {
+  background: var(--white);
+  border-radius: 20px;
+  padding: 35px;
+  width: 95%;
+  max-width: 900px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+  text-align: center;
+}
+
+/* Título */
+.titulo {
+  font-size: 32px;
+  color: var(--blue-900);
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+
+/* Descrição */
+.descricao {
+  color: var(--gray-700);
+  font-size: 17px;
+  max-width: 700px;
+  margin: 0 auto 30px auto;
+}
+
+/* Container do vídeo */
+.video-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.video-container video {
+  width: 100%;
+  max-width: 800px;
+  border-radius: 14px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  outline: none;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .titulo {
+    font-size: 24px;
+  }
+
+  .video-card {
+    padding: 20px;
+  }
+}

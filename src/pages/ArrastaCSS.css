@@ -1,0 +1,172 @@
+:root {
+  --bg-page: #f0f4ff;
+  --card-bg: #1e293b;
+  --card-border: #cbd5e1;
+  --card-radius: 12px;
+  --text-light: #ffffff;
+  --text-dark: #111827;
+  --drop-bg: #ffffff;
+  --drop-border: #cbd5e1;
+  --drop-radius: 8px;
+  --drop-hover: #e0f2fe;
+}
+
+/* WRAPPER PRINCIPAL */
+.jogos-wrapper {
+  width: 100%;
+  min-height: 100vh;
+  background-color: var(--bg-page);
+  padding: 40px;
+  font-family: "Segoe UI", sans-serif;
+  color: var(--text-dark);
+}
+
+h1 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+p {
+  text-align: center;
+  font-size: 1rem;
+  margin-bottom: 30px;
+}
+
+/* CONTAINER PRINCIPAL */
+.arrasta-container {
+  display: flex;
+  gap: 40px;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+/* ÁREA DE VÍDEOS */
+.sign-area {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  flex: 1;
+  max-width: 480px;
+}
+
+.sign-tile {
+  background-color: var(--card-bg);
+  border-radius: var(--card-radius);
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: grab;
+  transition: transform 0.2s;
+
+  width: 200px;
+  height: 150px;
+}
+
+.sign-tile:hover {
+  transform: translateY(-4px);
+}
+
+.sign-tile video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: var(--card-radius);
+  background-color: black;
+}
+
+/* ÁREA DE NOMES / DROP ZONES */
+.drop-area {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  flex: 1;
+  max-width: 300px;
+}
+
+.drop-zone {
+  background-color: var(--drop-bg);
+  border: 2px dashed var(--drop-border);
+  border-radius: var(--drop-radius);
+  padding: 10px;
+  font-weight: 600;
+  text-align: center;
+  transition: background 0.2s, border-color 0.2s;
+  width: 200px;
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.drop-zone .drop-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.drop-zone .mini-video {
+  width: 80px;
+  height: 60px;
+  margin-top: 5px;
+  object-fit: cover;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  transition: transform 0.2s;
+}
+
+.drop-zone .mini-video:hover {
+  transform: scale(1.1);
+}
+
+/* ESTADOS DE ACERTO E ERRO */
+.drop-zone.matched {
+  background-color: #e6ffed; /* verde claro */
+  border-color: #22c55e;     /* verde escuro */
+}
+
+.drop-zone.wrong {
+  background-color: #ffe6e6; /* vermelho claro */
+  border-color: #dc2626;     /* vermelho escuro */
+}
+
+/* HOVER DROP ZONE */
+.drop-zone:hover {
+  background-color: var(--drop-hover);
+}
+
+/* MENSAGEM FINAL */
+.mensagem-final {
+  margin-top: 30px;
+  text-align: center;
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #16a34a;
+}
+
+/* RESPONSIVO */
+@media (max-width: 900px) {
+  .arrasta-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .sign-area,
+  .drop-area {
+    max-width: 100%;
+  }
+
+  .sign-tile,
+  .drop-zone {
+    width: 80%;
+    height: 150px;
+  }
+
+  .drop-zone .mini-video {
+    width: 60px;
+    height: 45px;
+  }
+}
